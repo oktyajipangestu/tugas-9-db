@@ -1,0 +1,32 @@
+1. Buat database niomic kemudian buat tabel mahasiswa_niomic dengan data sebagai berikut:
+create table mahasiswa_niomic(
+    -> nim int(9) unsigned not null primary key,
+    -> nama varchar(100) not null,
+    -> asal varchar(50) not null,
+    -> jurusan varchar(100) not null,
+    -> nilai_uan decimal(5,2) not null
+    -> );
+
+insert into mahasiswa_niomic values (17020217, 'James Situmorang', 'Medan', 'Kedokteran Gigi', '341.10');
+insert into mahasiswa_niomic values (17080225, 'Husli Khairan', 'Jakarta', 'Akutansi', '288.55');
+insert into mahasiswa_niomic values (17080305, 'Rina Kumala Sari', 'Jakarta', 'Akutansi', '337.99');
+insert into mahasiswa_niomic values (17090113, 'Riana Putria', 'Padang', 'Kimia', '339.20');
+insert into mahasiswa_niomic values (17090222, 'Sari Citra Lestari', 'Jakarta', 'Manajemen', '310.60');
+insert into mahasiswa_niomic values (17090308, 'Christine Wijaya', 'Medan', 'Manajemen', '321.74');
+insert into mahasiswa_niomic values (17140119, 'Sandri Fatmala', 'Bandung', 'Ilmu Komputer', '322.91');
+insert into mahasiswa_niomic values (17140120, 'Bobby Permana', 'Medan', 'Ilmu Komputer', '280.82');
+insert into mahasiswa_niomic values (17140133, 'Ikhsan Prayoga', 'Jakarta', 'Ilmu Komputer', '300.16');
+insert into mahasiswa_niomic values (17140143, 'Rudi Permana', 'Bandung', 'Ilmu Komputer', '290.44');
+
+
+2. Ubah kolom mahasiswa_baru dengan nama = Irfan Arifin, asal =  Lampung dengan kondisi nim = '17020217
+update mahasiswa_niomic set nama='Irfan Arifin', asal='Lampung' where nim=17020217;
+
+
+3. Ubah kolom nilai_uan = 5000 atas nama Husli Khairan. (Note: Gunakan perintah update ignore)
+update mahasiswa_niomic set nilai_uan = '500.00' where nama = 'Husli Khairan';
+
+4. Gunakan query replace untuk nilai nim = '17090141', nama =  'Lidya Fitriana', asal =  'Surabaya',  jurusan = 'Kimia' dan nilai_uan =  290.54;
+replace into mahasiswa_niomic values(
+    -> 17090141, 'Lidya Fitriana', 'Surabaya', 'Kimia', '290.54'
+    -> );
